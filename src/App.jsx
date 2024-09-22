@@ -2,6 +2,9 @@ import { useState, useTransition } from "react";
 import "./App.css";
 import Products from "./components/Products";
 import Home from "./components/Home";
+import About from "./components/About";
+import { Suspense } from "react";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const App = () => {
   const [tab, setTab] = useState("home");
@@ -40,7 +43,13 @@ const App = () => {
         {isPending && <h1>Loading...</h1>}
         {!isPending && tab === "home" && <Home />}
         {!isPending && tab === "products" && <Products />}
-        {!isPending && tab === "about" && <h1>About Page</h1>}
+        {!isPending && tab === "about" && (
+          <ErrorBoundary fallback={<h1>Something went wrong</h1>}>
+            <Suspense fallback={<h1>Loading...</h1>}>
+              <About />
+            </Suspense>
+          </ErrorBoundary>
+        )}
       </div>
     </main>
   );

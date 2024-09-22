@@ -184,3 +184,70 @@ form button:focus {
     transform: rotate(360deg);
   }
 }
+
+/* About Page Styles */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.about-container h1 {
+  font-size: 2rem;
+  color: #3318ca;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-container img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-container img:hover {
+  transform: scale(1.05);
+}
+
+.about-container h2 {
+  font-size: 1.5rem;
+  color: #262626;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.about-container h2 span {
+  display: block;
+  font-size: 1.2rem;
+  color: #555;
+  font-weight: normal;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 15px;
+  }
+
+  .about-container img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .about-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-container h2 {
+    font-size: 1.3rem;
+  }
+}
